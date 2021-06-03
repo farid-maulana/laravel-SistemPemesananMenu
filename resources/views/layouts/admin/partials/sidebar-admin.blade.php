@@ -51,8 +51,8 @@
                         <span class="pcoded-mtext">Promo</span>
                     </a>
                 </li>
-                <li class="">
-                    <a href="#" class="waves-effect waves-dark">
+                <li class="{{ (request()->segment(1) == 'tables') ? 'active' : '' }}">
+                    <a href="{{ route('tables.index') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-grid"></i>
                         </span>
