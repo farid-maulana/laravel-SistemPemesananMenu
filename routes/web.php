@@ -18,15 +18,17 @@ use App\Http\Controllers\PromoController;
 */
 
 Route::get('/', function () {
-    return view('layouts.admin.master');
+    return redirect('login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('tables', TableController::class);
-Route::prefix('menu')->group(function () {
-    Route::resource('daftar_menu', MenuController::class);
-    Route::resource('categories', CategoryController::class);
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('tables', TableController::class);
+    Route::prefix('menu')->group(function () {
+        Route::resource('daftar_menu', MenuController::class);
+        Route::resource('categories', CategoryController::class);
+    });
+    Route::resource('promo', PromoController::class);
 });
-Route::resource('promo', PromoController::class);
