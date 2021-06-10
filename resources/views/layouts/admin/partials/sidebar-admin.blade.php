@@ -20,7 +20,7 @@
                         <span class="pcoded-mtext">Profil Restoran</span>
                     </a>
                 </li>
-                <li class="pcoded-hasmenu">
+                <li class="pcoded-hasmenu {{ (request()->segment(1) == 'menu') ? 'active pcoded-trigger' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-list"></i></span>
                         <span class="pcoded-mtext">Menu Restoran</span>
@@ -31,8 +31,8 @@
                                 <span class="pcoded-mtext">Kategori Menu</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="#" class="waves-effect waves-dark">
+                        <li class="{{ (request()->segment(2) == 'daftar_menu') ? 'active' : '' }}">
+                            <a href="{{ route('daftar_menu.index') }}" class="waves-effect waves-dark">
                                 <span class="pcoded-mtext">Daftar Menu</span>
                             </a>
                         </li>
