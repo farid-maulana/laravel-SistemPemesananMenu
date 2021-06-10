@@ -43,8 +43,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="">
-                    <a href="#" class="waves-effect waves-dark">
+                <li class="{{ (request()->segment(1) == 'promo') ? 'active' : '' }}">
+                    <a href="{{ route('promo.index') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="feather icon-tag"></i>
                         </span>

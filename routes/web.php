@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PromoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::prefix('menu')->group(function () {
     Route::resource('daftar_menu', MenuController::class);
     Route::resource('categories', CategoryController::class);
 });
+Route::resource('promo', PromoController::class);
