@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('tables', TableController::class);
 Route::prefix('menu')->group(function () {
     Route::resource('daftar_menu', MenuController::class);
+    Route::resource('categories', CategoryController::class);
 });
